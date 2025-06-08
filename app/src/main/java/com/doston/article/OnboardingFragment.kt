@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.doston.article.databinding.FragmentOnboardingBinding
 
 class OnboardingFragment : Fragment() {
+    private lateinit var binding: FragmentOnboardingBinding
 
     companion object {
         private const val ARG_IMAGE = "image"
@@ -27,15 +27,20 @@ class OnboardingFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_onboarding, container, false)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentOnboardingBinding.inflate(layoutInflater)
+
 
         arguments?.let {
-            view.findViewById<ImageView>(R.id.imageOnboarding).setImageResource(it.getInt(ARG_IMAGE))
-            view.findViewById<TextView>(R.id.titleOnboarding).text = it.getString(ARG_TITLE)
-            view.findViewById<TextView>(R.id.descOnboarding).text = it.getString(ARG_DESC)
+            binding.imageOnboarding.setImageResource(it.getInt(ARG_IMAGE))
+            binding.titleOnboarding.text = it.getString(ARG_TITLE)
+            binding.descOnboarding.text = it.getString(ARG_DESC)
         }
 
-        return view
+        return binding.root
     }
 }

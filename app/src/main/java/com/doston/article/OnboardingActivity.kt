@@ -21,13 +21,16 @@ class OnboardingActivity : AppCompatActivity() {
             goToMain()
             return
         }
+        binding=ActivityOnboardingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        window.statusBarColor=getColor(R.color.onboarding)
+        window.navigationBarColor=getColor(R.color.onboarding)
 
-        setContentView(R.layout.activity_onboarding)
-binding=ActivityOnboardingBinding.inflate(layoutInflater)
-
+        viewPager=binding.viewPagerOnboarding
 
         adapter = OnboardingAdapter(this)
         viewPager.adapter = adapter
+        binding.indicator.setViewPager(viewPager)
 
         binding.next.setOnClickListener {
             if (viewPager.currentItem < adapter.itemCount - 1) {

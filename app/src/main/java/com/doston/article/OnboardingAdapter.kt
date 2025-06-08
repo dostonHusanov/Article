@@ -7,9 +7,9 @@ import com.doston.article.R
 class OnboardingAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
 
     private val fragments = listOf(
-        OnboardingFragment.newInstance(R.mipmap.ic_launcher, "Welcome", "This is the first screen."),
-        OnboardingFragment.newInstance(R.mipmap.ic_launcher, "Explore", "Learn what this app can do."),
-        OnboardingFragment.newInstance(R.mipmap.ic_launcher, "Start", "Let’s begin your journey!")
+        OnboardingFragment.newInstance(R.drawable.onboarding_a, "Share with anyone", "Give others access to any file or any folder you choose"),
+        OnboardingFragment.newInstance(R.drawable.onboarding_b, "Access everywhere", "Reach your files from any device, anywhere"),
+        OnboardingFragment.newInstance(R.drawable.onboarding_c, "Save everything", "Files in drive are kept safe, so you can't lose them")
     )
 
     override fun getItemCount(): Int = fragments.size

@@ -6,4 +6,8 @@
     </style>
 
     <style name="Theme.Article" parent="Base.Theme.Article" />
+    <style name="RoundedImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
 </resources>

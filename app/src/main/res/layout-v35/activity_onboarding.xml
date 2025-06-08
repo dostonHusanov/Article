@@ -58,9 +58,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 app:ci_gravity="center"
-                app:ci_height="20dp"
-app:ci_drawable="@drawable/rec"
-                app:ci_width="20dp"
+                app:ci_height="10dp"
+               android:contentSensitivity="sensitive"
+                
+                app:ci_width="10dp"
                 app:ci_orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="@id/next"
                 app:layout_constraintTop_toTopOf="@id/next"

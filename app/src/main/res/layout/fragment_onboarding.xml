@@ -7,10 +7,7 @@
     android:orientation="vertical"
     tools:context=".OnboardingFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+
 
 
         <ImageView
@@ -19,13 +16,16 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="24dp"
             android:layout_weight="1"
-            android:padding="10dp" />
+            android:src="@drawable/onboarding_b"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:padding="10dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
+            android:layout_weight="2"
+            android:gravity="top"
             android:orientation="vertical">
 
             <TextView
@@ -56,6 +56,6 @@
                 android:textColorHint="@color/onboardingT"
                 android:textSize="18sp"
                 android:textStyle="normal" />
-        </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>
