@@ -54,4 +54,10 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation (libs.androidx.viewpager2)
     implementation(libs.circleindicator)
+    implementation (libs.retrofit)
+    implementation (libs.converter.moshi)
+    implementation (libs.moshi)
+    implementation (libs.moshi.kotlin)
+    implementation (libs.coil)
+
 }
