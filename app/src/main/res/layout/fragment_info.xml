@@ -46,9 +46,9 @@
         android:layout_margin="15dp"
         android:text="The world of work is undergoing a rapid. The real danger isn’t what’s happening with AI around us, it’s when your business doesn’t have access to AI while your competitors do. Your competitors are already using AI to save time, make faster decisions, and run better campaigns. They’re not working harder, they’re working smarter. And that’s how they’re pulling ahead and pushing you back at the same time. The real danger isn’t what’s happening with AI around us, it’s when your business doesn’t have access to AI while your competitors do. Your competitors are already using AI to save time, make faster decisions, and run better campaigns. They’re not working harder, they’re working smarter. And that’s how they’re pulling ahead and pushing you back at the same time."
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
-
+android:id="@+id/desc"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title"/>
 
