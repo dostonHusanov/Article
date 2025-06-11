@@ -34,63 +34,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        setSupportActionBar(binding.toolbar)
 
-        val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.fragmentContainerView) as NavHostFragment
-        navController = navHostFragment.navController
-
-        setupDrawer()
-        setupNavigationListener()
-        setupDestinationListener()
     }
 
 
-    private fun setupDrawer() {
-
-        val toggle = ActionBarDrawerToggle(
-            this,
-            binding.drawerLayout,
-            binding.toolbar,
-            R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close
-        )
-        binding.drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-    }
-
-    private fun setupNavigationListener() {
-        binding.navigationView.setNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.nav_home -> navController.navigate(R.id.mainFragment)
-
-            }
-            binding.drawerLayout.closeDrawer(GravityCompat.START)
-
-            true
-        }
-    }
-
-    private fun setupDestinationListener() {
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.infoFragment -> {
-                    binding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
-                    binding.toolbar.visibility = View.GONE
-                }
-                else -> {
-                    binding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
-                    binding.toolbar.visibility = View.VISIBLE
-                }
-            }
-        }
-    }
-
-    override fun onBackPressed() {
-        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            binding.drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
-    }
 }
