@@ -1,5 +1,6 @@
 [versions]
 agp = "8.7.3"
+analytics = "5.0.0"
 coil = "2.5.0"
 converterMoshi = "2.9.0"
 kotlin = "2.1.20"
@@ -21,6 +22,7 @@ circleindicator = "2.1.6"
 swiperefreshlayout = "1.1.0"
 
 [libraries]
+analytics = { module = "io.appmetrica.analytics:analytics", version.ref = "analytics" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2" }
 coil = { module = "io.coil-kt:coil", version.ref = "coil" }

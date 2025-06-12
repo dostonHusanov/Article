@@ -60,5 +60,4 @@ dependencies {
     implementation (libs.moshi)
     implementation (libs.moshi.kotlin)
     implementation (libs.coil)
-
 }

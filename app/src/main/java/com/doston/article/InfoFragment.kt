@@ -35,9 +35,9 @@ class InfoFragment : Fragment() {
 
         return binding.root
     }
+
     private fun cleanHtmlForTextView(html: String): String {
         return html
-            // Remove complex HTML tags that don't work well in TextView
             .replace(Regex("<h[1-6][^>]*>"), "<b>")
             .replace(Regex("</h[1-6]>"), "</b><br>")
             .replace(Regex("<ul[^>]*>"), "")
@@ -46,14 +46,10 @@ class InfoFragment : Fragment() {
             .replace(Regex("</li>"), "<br>")
             .replace(Regex("<p[^>]*>"), "")
             .replace(Regex("</p>"), "<br>")
-            // Remove any remaining complex attributes
             .replace(Regex("<([a-zA-Z]+)[^>]*>"), "<$1>")
-            // Clean up multiple line breaks
             .replace(Regex("(<br>\\s*){3,}"), "<br><br>")
-            // Trim
             .trim()
     }
-
 
 
 }

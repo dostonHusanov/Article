@@ -3,7 +3,6 @@ package com.doston.article
 import OnboardingAdapter
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.doston.article.databinding.ActivityOnboardingBinding
@@ -21,12 +20,12 @@ class OnboardingActivity : AppCompatActivity() {
             goToMain()
             return
         }
-        binding=ActivityOnboardingBinding.inflate(layoutInflater)
+        binding = ActivityOnboardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        window.statusBarColor=getColor(R.color.onboarding)
-        window.navigationBarColor=getColor(R.color.onboarding)
+        window.statusBarColor = getColor(R.color.onboarding)
+        window.navigationBarColor = getColor(R.color.onboarding)
 
-        viewPager=binding.viewPagerOnboarding
+        viewPager = binding.viewPagerOnboarding
 
         adapter = OnboardingAdapter(this)
         viewPager.adapter = adapter

@@ -5,5 +5,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="onboarding">#FF00FA7D</color>
     <color name="onboardingT">#FF016C29</color>
-
+    <color name="ad_red">#E53E3E</color>
+    <color name="ad_gold">#FFD700</color>
+    <color name="text_gray">#666666</color>
+    <color name="light_gray">#999999</color>
+    <color name="button_bg">#F0F0F0</color>
+    <color name="button_border">#E0E0E0</color>
 </resources>
