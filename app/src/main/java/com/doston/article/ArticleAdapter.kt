@@ -16,7 +16,7 @@ class ArticleAdapter(
     companion object {
         private const val TYPE_ARTICLE = 1
         private const val TYPE_AD = 2
-        private const val BASE_URL = "https://dohodinfor.ru/apiv2test/"
+        const val BASE_URL = "https://dohodinfor.ru/apiv2test/"
         private const val APP_KEY = "com.myapp1"
     }
 
@@ -94,9 +94,9 @@ class ArticleAdapter(
     private fun bindAd(holder: AdViewHolder, item: RecyclerItem.AdItem) {
         val ad = item.ad
 
-        holder.binding.adTitle.text = ad.title ?: "alo Специальное предложение"
+        holder.binding.adTitle.text = ad.title ?: "Специальное предложение"
         val cleanedHtml =
-            cleanHtmlForTextView(ad.description ?: " alo Не упустите выгодную возможность!")
+            cleanHtmlForTextView(ad.description ?: "Не упустите выгодную возможность!")
         holder.binding.adDescription.text =
             android.text.Html.fromHtml(cleanedHtml, android.text.Html.FROM_HTML_MODE_COMPACT)
 
@@ -157,6 +157,37 @@ class ArticleAdapter(
             holder.binding.mainL.visibility = View.GONE
             holder.binding.image.visibility = View.GONE
 
+        } else if (ad.id == "inlineAd_LongNoBtn") {
+            holder.binding.adDescription.visibility = View.GONE
+            holder.binding.adImage.visibility = View.GONE
+            holder.binding.image.visibility = View.GONE
+
+            val imageUrl = if (ad.imageUrl?.startsWith("http") == true) {
+                ad.imageUrl
+            } else {
+                "$BASE_URL${ad.imageUrl}"
+            }
+
+            holder.binding.adInline.load(imageUrl) {
+                crossfade(true)
+                placeholder(R.mipmap.ic_launcher)
+                error(R.mipmap.ic_launcher)
+            }
+        } else if (ad.id == "inlineAd_ShortBtn") {
+            holder.binding.adDescription.visibility = View.GONE
+            holder.binding.adImage.visibility = View.GONE
+            holder.binding.image.visibility = View.GONE
+            val imageUrl = if (ad.imageUrl?.startsWith("http") == true) {
+                ad.imageUrl
+            } else {
+                "$BASE_URL${ad.imageUrl}"
+            }
+
+            holder.binding.adInline.load(imageUrl) {
+                crossfade(true)
+                placeholder(R.mipmap.ic_launcher)
+                error(R.mipmap.ic_launcher)
+            }
         } else {
             holder.binding.adImage.visibility = View.GONE
             val imageUrl = if (ad.imageUrl?.startsWith("http") == true) {

@@ -16,7 +16,7 @@ data class Ad(
 
     val type: String,
     val title: String?,
-    val description: String?,
+    var description: String?,
     val imageUrl: String?,
     val showAdLabel: Boolean = false,
     val buttonCaption: String?,
