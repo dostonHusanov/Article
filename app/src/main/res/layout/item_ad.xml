@@ -112,17 +112,16 @@
             <androidx.cardview.widget.CardView
 
                 android:id="@+id/adButtonL"
-                android:layout_width="140dp"
+                android:layout_width="wrap_content"
                 android:layout_height="36dp"
                 android:layout_gravity="end"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/ad_button_bg"
-                android:elevation="30dp"
+                android:elevation="40dp"
 
-                android:paddingHorizontal="16dp"
+
                 app:cardBackgroundColor="@color/white"
-                android:paddingVertical="16dp"
                 android:visibility="visible"
                 app:cardCornerRadius="10dp">
 
@@ -134,6 +133,8 @@
                     android:text="ПОДРОБНЕЕ 🔥"
                     android:textColor="@color/black"
                     android:textSize="16sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 

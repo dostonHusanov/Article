@@ -113,8 +113,9 @@ class ArticleAdapter(
 
         if (ad.buttonCaption.isNullOrEmpty()) {
             holder.binding.adButton.visibility = View.GONE
+
         } else {
-            holder.binding.adButton.text = "ПОДРОБНЕЕ 🔥"
+            holder.binding.adButton.text=ad.buttonCaption
             holder.binding.adButton.visibility = View.VISIBLE
         }
 
@@ -161,6 +162,7 @@ class ArticleAdapter(
             holder.binding.adDescription.visibility = View.GONE
             holder.binding.adImage.visibility = View.GONE
             holder.binding.image.visibility = View.GONE
+            holder.binding.adButtonL.visibility=View.GONE
 
             val imageUrl = if (ad.imageUrl?.startsWith("http") == true) {
                 ad.imageUrl
@@ -213,21 +215,6 @@ class ArticleAdapter(
         }
     }
 
-
-    private fun extractDiscountFromText(text: String): String {
-        val discountRegex = Regex("(\\d+)%")
-        val match = discountRegex.find(text)
-        return match?.value ?: "70%"
-    }
-
-    private fun parseDiscountText(discountText: String): Pair<String, String> {
-        return if (discountText.contains("%")) {
-            val number = discountText.replace("%", "")
-            Pair(number, "OFF")
-        } else {
-            Pair("70", "OFF")
-        }
-    }
 
     private fun cleanHtmlForTextView(html: String): String {
         return html
