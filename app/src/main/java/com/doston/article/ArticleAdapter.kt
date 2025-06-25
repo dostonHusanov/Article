@@ -159,7 +159,7 @@ class ArticleAdapter(
             holder.binding.image.visibility = View.GONE
 
         } else if (ad.id == "inlineAd_LongNoBtn") {
-            holder.binding.adDescription.visibility = View.GONE
+
             holder.binding.adImage.visibility = View.GONE
             holder.binding.image.visibility = View.GONE
             holder.binding.adButtonL.visibility=View.GONE
@@ -176,7 +176,7 @@ class ArticleAdapter(
                 error(R.mipmap.ic_launcher)
             }
         } else if (ad.id == "inlineAd_ShortBtn") {
-            holder.binding.adDescription.visibility = View.GONE
+
             holder.binding.adImage.visibility = View.GONE
             holder.binding.image.visibility = View.GONE
             val imageUrl = if (ad.imageUrl?.startsWith("http") == true) {
